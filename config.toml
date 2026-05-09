@@ -1,0 +1,39 @@
+# 要监控的进程名称（不带路径，如 notepad.exe）
+process_name = "notepad.exe"
+
+# 内存告警阈值，单位：MB
+memory_threshold_mb = 500
+
+# 检查间隔，单位：秒
+check_interval_seconds = 60
+
+# 告警冷却时间，单位：秒（首次告警后多久内不重复发送）
+alert_cooldown_seconds = 3600
+
+# 日志文件路径（留空则只输出到控制台）
+log_file = "heap_alarm.log"
+
+# 运行模式：console（控制台）或 service（Windows 服务）
+service_mode = "service"
+
+[smtp]
+  # SMTP 服务器地址
+  host = "smtp.qq.com"
+
+  # SMTP 端口（465 为 SMTPS，587 为 STARTTLS）
+  port = 465
+
+  # SMTP 用户名（QQ 邮箱填完整邮箱地址）
+  username = "example@qq.com"
+
+  # SMTP 密码（QQ 邮箱使用授权码，不是登录密码）
+  password = "your-password"
+
+  # 发件人邮箱
+  from = "example@qq.com"
+
+  # 收件人邮箱列表
+  to = ["admin@example.com"]
+
+  # 是否使用 TLS（SMTPS 端口 465 填 true，STARTTLS 端口 587 填 false）
+  use_tls = true
